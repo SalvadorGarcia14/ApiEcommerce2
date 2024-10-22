@@ -10,10 +10,16 @@ namespace Infrastructure
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+            // Inicializar los DbSets
+            Productos = Set<Producto>();
+            Usuarios = Set<Usuario>();
+            Ordenes = Set<Orden>();
+        }
 
-        public DbSet<Producto> Productos { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Orden> Ordenes { get; set; }
+        public DbSet<Producto> Productos { get; set; } = null!;
+        public DbSet<Usuario> Usuarios { get; set; } = null!;
+        public DbSet<Orden> Ordenes { get; set; } = null!;
     }
 }

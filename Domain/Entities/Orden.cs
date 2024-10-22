@@ -10,7 +10,9 @@ namespace Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid UsuarioId { get; set; }
-        public List<DetalleOrden> Detalles { get; set; }
+        public List<DetalleOrden> Detalles { get; set; } = new List<DetalleOrden>(); // Inicialización predeterminada
         public double TotalCuenta { get; set; }
+
+
     }
 }

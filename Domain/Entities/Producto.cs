@@ -12,9 +12,16 @@ namespace Domain.Entities
         public string Nombre { get; set; }
         public double Precio { get; set; }
         public int Cantidad { get; set; }
-        public string Imagen { get; set; }
+        public string? Imagen { get; set; }
         public bool Status { get; set; }
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
+
+        public Producto(string nombre)
+        {
+            Id = Guid.NewGuid(); // Generar un nuevo ID
+            Nombre = nombre;
+            
+        }
 
         public void ActualizarStock(int cantidad)
         {

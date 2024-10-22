@@ -14,5 +14,16 @@ namespace Domain.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public string Rango { get; set; } // Admin, Vendedor, Cliente
+
+        // Inicializa con cadena vacía
+        public Usuario()
+        {
+            Id = Guid.NewGuid();
+            Nombre = string.Empty;
+            Apellido = string.Empty; 
+            Email = string.Empty; 
+            Password = string.Empty; 
+            Rango = string.Empty;
+        }
     }
 }

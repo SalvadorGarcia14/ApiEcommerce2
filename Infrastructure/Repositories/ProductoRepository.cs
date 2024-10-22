@@ -25,7 +25,8 @@ namespace Infrastructure.Repositories
 
         public async Task<Producto> GetByIdAsync(Guid id)
         {
-            return await _context.Productos.FindAsync(id);
+            var producto = await _context.Productos.FindAsync(id);
+            return producto ?? throw new InvalidOperationException("Producto no encontrado."); // Lanzar excepción si no se encuentra
         }
 
         public async Task AddAsync(Producto producto)
@@ -43,6 +44,12 @@ namespace Infrastructure.Repositories
         public async Task DeleteAsync(Guid id)
         {
             var producto = await _context.Productos.FindAsync(id);
+
+            if (producto == null) // Verificar si el producto es nulo
+            {
+                throw new InvalidOperationException("Producto no encontrado."); // Lanzar excepción si no se encuentra
+            }
+
             _context.Productos.Remove(producto);
             await _context.SaveChangesAsync();
         }

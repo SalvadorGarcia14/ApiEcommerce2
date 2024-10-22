@@ -1,3 +1,8 @@
+using Domain.Interfaces;
+using Infrastructure;
+using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +11,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configuración de la base de datos
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(
+    builder.Configuration["ConnectionStrings:DBConnectionString"], b => b.MigrationsAssembly("ApiEcommerce2")));
+
+builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
+builder.Services.AddControllers();
+
+
 
 var app = builder.Build();
 
