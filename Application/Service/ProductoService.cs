@@ -31,6 +31,11 @@ namespace Application.Service
         {
             await _productoRepository.AddAsync(producto);
         }
+        public async Task AddOrUpdateAsync(Producto producto)
+        {
+            // Llamar al repositorio para añadir o actualizar el producto
+            await _productoRepository.AddOrUpdateAsync(producto);
+        }
 
         public async Task ModificarProducto(Producto producto)
         {

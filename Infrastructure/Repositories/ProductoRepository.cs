@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces;
-
 namespace Infrastructure.Repositories
 {
     public class ProductoRepository : IProductoRepository
@@ -34,11 +33,38 @@ namespace Infrastructure.Repositories
 
             return producto;
         }
+
         public async Task AddAsync(Producto producto)
         {
-            // No asignes el Id manualmente aquí
             await _context.Productos.AddAsync(producto);
-            await _context.SaveChangesAsync(); // Esto guardará el producto y generará el Id automáticamente
+            await _context.SaveChangesAsync();
+        }
+
+        // Nuevo método AddOrUpdateAsync
+        public async Task AddOrUpdateAsync(Producto producto)
+        {
+            // Buscar si ya existe un producto con el mismo nombre y categoría
+            var productoExistente = await _context.Productos
+                .FirstOrDefaultAsync(p => p.Nombre == producto.Nombre && p.Categoria == producto.Categoria);
+
+            if (productoExistente != null)
+            {
+                // Si el producto ya existe, sumamos la cantidad y actualizamos el precio
+                productoExistente.Cantidad += producto.Cantidad;
+                productoExistente.Precio = producto.Precio; // Actualizar con el último precio ingresado
+                productoExistente.Imagen = producto.Imagen; // También puedes actualizar la imagen
+                productoExistente.Descripcion = producto.Descripcion; // También puedes actualizar la descripción
+
+                _context.Productos.Update(productoExistente);
+            }
+            else
+            {
+                // Si no existe, agregamos el nuevo producto
+                await _context.Productos.AddAsync(producto);
+            }
+
+            // Guardar los cambios
+            await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Producto producto)
@@ -56,12 +82,12 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id) // Cambiado a int
+        public async Task DeleteAsync(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
             if (producto == null)
             {
-                throw new InvalidOperationException("Producto no encontrado."); // Lanzar excepción si no se encuentra
+                throw new InvalidOperationException("Producto no encontrado.");
             }
 
             _context.Productos.Remove(producto);

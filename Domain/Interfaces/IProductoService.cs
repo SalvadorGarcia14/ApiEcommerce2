@@ -14,5 +14,7 @@ namespace Domain.Interfaces
         Task AgregarProducto(Producto producto);
         Task ModificarProducto(Producto producto);
         Task EliminarProducto(int id); // Cambiado a int
+        Task AddOrUpdateAsync(Producto producto);
+
     }
 }

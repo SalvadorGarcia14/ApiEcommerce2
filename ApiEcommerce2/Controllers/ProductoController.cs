@@ -39,12 +39,12 @@ namespace ApiEcommerce.Controllers
             // Validaciones
             if (string.IsNullOrEmpty(producto.Nombre))
             {
-                return BadRequest("El nombre del producto no puede ser nulo o vacío.");
+                return BadRequest("El nombre del producto no puede ser nulo.");
             }
 
             if (string.IsNullOrEmpty(producto.Categoria))
             {
-                return BadRequest("La categoría del producto no puede ser nula o vacía.");
+                return BadRequest("La categoría del producto no puede ser nulo.");
             }
 
             var categoriasPermitidas = new[] { "Motherboard", "Procesador", "MemoriaRam", "PlacaDeVideo" };
@@ -53,11 +53,10 @@ namespace ApiEcommerce.Controllers
                 return BadRequest("Categoría no válida. Las categorías permitidas son: Motherboard, Procesador, MemoriaRam, PlacaDeVideo.");
             }
 
-            // Dejar que la base de datos asigne el ID automáticamente
-            // Esto se manejará en la base de datos, así que puedes eliminar la línea producto.Id = 0;
+            // Llamar al método de servicio para agregar o actualizar el producto
+            await _productoService.AddOrUpdateAsync(producto);
 
-            await _productoService.AgregarProducto(producto);
-            return CreatedAtAction(nameof(GetProducto), new { id = producto.Id }, producto);
+            return Ok("Producto ya existente. Actualizado correctamente.");
         }
 
         // Modificar un producto existente por ID
