@@ -23,29 +23,43 @@ namespace Infrastructure.Repositories
             return await _context.Productos.ToListAsync();
         }
 
-        public async Task<Producto> GetByIdAsync(Guid id)
+        public async Task<Producto> GetByIdAsync(int id)
         {
-            var producto = await _context.Productos.FindAsync(id);
-            return producto ?? throw new InvalidOperationException("Producto no encontrado."); // Lanzar excepción si no se encuentra
-        }
+            var producto = await _context.Productos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
 
+            if (producto == null)
+            {
+                throw new InvalidOperationException("Producto no encontrado.");
+            }
+
+            return producto;
+        }
         public async Task AddAsync(Producto producto)
         {
+            // No asignes el Id manualmente aquí
             await _context.Productos.AddAsync(producto);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // Esto guardará el producto y generará el Id automáticamente
         }
 
         public async Task UpdateAsync(Producto producto)
         {
-            _context.Productos.Update(producto);
+            var productoExistente = await _context.Productos.FindAsync(producto.Id);
+
+            if (productoExistente == null)
+            {
+                throw new InvalidOperationException("Producto no encontrado.");
+            }
+
+            // Actualiza los valores del producto existente con los del nuevo producto
+            _context.Entry(productoExistente).CurrentValues.SetValues(producto);
+
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id)
+        public async Task DeleteAsync(int id) // Cambiado a int
         {
             var producto = await _context.Productos.FindAsync(id);
-
-            if (producto == null) // Verificar si el producto es nulo
+            if (producto == null)
             {
                 throw new InvalidOperationException("Producto no encontrado."); // Lanzar excepción si no se encuentra
             }

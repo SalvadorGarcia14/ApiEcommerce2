@@ -22,7 +22,7 @@ namespace Application.Service
             return await _productoRepository.GetAllAsync();
         }
 
-        public async Task<Producto> ObtenerProductoPorId(Guid id)
+        public async Task<Producto> ObtenerProductoPorId(int id) // Cambiado a int
         {
             return await _productoRepository.GetByIdAsync(id);
         }
@@ -37,7 +37,7 @@ namespace Application.Service
             await _productoRepository.UpdateAsync(producto);
         }
 
-        public async Task EliminarProducto(Guid id)
+        public async Task EliminarProducto(int id) // Cambiado a int
         {
             await _productoRepository.DeleteAsync(id);
         }

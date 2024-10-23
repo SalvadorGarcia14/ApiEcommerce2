@@ -10,9 +10,9 @@ namespace Domain.Interfaces
     public interface IProductoService
     {
         Task<List<Producto>> ObtenerProductos();
-        Task<Producto> ObtenerProductoPorId(Guid id);
+        Task<Producto> ObtenerProductoPorId(int id); // Cambiado a int
         Task AgregarProducto(Producto producto);
         Task ModificarProducto(Producto producto);
-        Task EliminarProducto(Guid id);
+        Task EliminarProducto(int id); // Cambiado a int
     }
 }

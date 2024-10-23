@@ -3,6 +3,7 @@ using System;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiEcommerce2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241022233439_AddCategoriaToProducto")]
+    partial class AddCategoriaToProducto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.35");
@@ -43,7 +45,7 @@ namespace ApiEcommerce2.Migrations
 
                     b.HasIndex("OrdenId");
 
-                    b.ToTable("DetalleOrden", (string)null);
+                    b.ToTable("DetalleOrden");
                 });
 
             modelBuilder.Entity("Domain.Entities.Orden", b =>
@@ -60,7 +62,7 @@ namespace ApiEcommerce2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ordenes", (string)null);
+                    b.ToTable("Ordenes");
                 });
 
             modelBuilder.Entity("Domain.Entities.Producto", b =>
@@ -94,7 +96,7 @@ namespace ApiEcommerce2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Productos", (string)null);
+                    b.ToTable("Productos");
                 });
 
             modelBuilder.Entity("Domain.Entities.Usuario", b =>
@@ -125,7 +127,7 @@ namespace ApiEcommerce2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Usuarios", (string)null);
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Domain.Entities.DetalleOrden", b =>

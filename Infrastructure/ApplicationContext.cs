@@ -12,10 +12,6 @@ namespace Infrastructure
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            // Inicializar los DbSets
-            Productos = Set<Producto>();
-            Usuarios = Set<Usuario>();
-            Ordenes = Set<Orden>();
         }
 
         public DbSet<Producto> Productos { get; set; } = null!;
