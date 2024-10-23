@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiEcommerce.Controllers
@@ -34,6 +35,7 @@ namespace ApiEcommerce.Controllers
 
         // Crear un nuevo producto
         [HttpPost]
+        [Authorize(Roles = "Admin,Vendedor")]
         public async Task<IActionResult> CrearProducto([FromBody] Producto producto)
         {
             // Validaciones
@@ -61,6 +63,7 @@ namespace ApiEcommerce.Controllers
 
         // Modificar un producto existente por ID
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ModificarProducto(int id, [FromBody] Producto producto)
         {
             if (producto.Id != id)

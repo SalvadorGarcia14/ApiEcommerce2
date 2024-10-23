@@ -25,7 +25,7 @@ namespace Domain.Entities
             Apellido = string.Empty;
             Email = string.Empty;
             Password = string.Empty;
-            Rango = string.Empty;
+            Rango = "Cliente"; // Valor predeterminado
         }
     }
 }

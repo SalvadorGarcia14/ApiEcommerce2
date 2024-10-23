@@ -17,7 +17,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite
 
 // Registro de repositorios y servicios
 builder.Services.AddScoped<IProductoRepository, ProductoRepository>();
-builder.Services.AddScoped<IProductoService, ProductoService>(); 
+builder.Services.AddScoped<IProductoService, ProductoService>();
+
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
 
 var app = builder.Build();
 

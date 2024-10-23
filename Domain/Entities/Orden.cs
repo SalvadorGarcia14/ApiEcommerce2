@@ -10,13 +10,15 @@ namespace Domain.Entities
     public class Orden
     {
         [Key]
-
-        public int Id { get; set; } // Autoincremental
+        public int Id { get; set; }
         public int UsuarioId { get; set; }
         public DateTime Fecha { get; set; }
-        public List<DetalleOrden> Detalles { get; set; } = new List<DetalleOrden>(); // Inicialización predeterminada
+        public List<DetalleOrden> DetallesOrden { get; set; } = new();
         public double TotalCuenta { get; set; }
 
-
+        public Orden()
+        {
+            DetallesOrden = new List<DetalleOrden>(); // Inicializa aquí
+        }
     }
 }
