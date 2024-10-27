@@ -22,21 +22,22 @@ namespace Application.Service
 
         public string GenerateToken(Usuario usuario)
         {
-            var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, usuario.Email),
-        new Claim(ClaimTypes.Role, usuario.Rango) // Aquí se incluye el rol
-    };
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, usuario.Email),
+                new Claim(ClaimTypes.Role, usuario.Role) // Agrega el rol aquí
+               };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("k9D7L2fG8vQ4tJ3nM6pZ5rA2W1xC8yE7sN5qT3dB4oY9lR3vK")); // Usa la clave secreta
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "your_issuer_here",
-                audience: "your_audience_here",
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds);
+                expires: DateTime.Now.AddMinutes(60),
+                signingCredentials: creds
+            );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }

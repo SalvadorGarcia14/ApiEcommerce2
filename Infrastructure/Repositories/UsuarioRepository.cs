@@ -66,7 +66,7 @@ namespace Infrastructure.Repositories
 
         public async Task<int> CountClientesAsync()
         {
-            return await _context.Usuarios.CountAsync(u => u.Rango == "Cliente");
+            return await _context.Usuarios.CountAsync(u => u.Role == "Cliente");
         }
 
 

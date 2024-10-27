@@ -31,7 +31,7 @@ namespace Application.Service
                 Apellido = apellido,
                 Email = email,
                 Password = BCrypt.Net.BCrypt.HashPassword(password), // Asegúrate de que esta línea se ejecute correctamente
-                Rango = rango
+                Role = rango
             };
 
             await _usuarioRepository.AddAsync(usuario);
@@ -65,9 +65,9 @@ namespace Application.Service
 
         public async Task AgregarUsuario(Usuario usuario)
         {
-            if (string.IsNullOrEmpty(usuario.Rango) || (usuario.Rango != "Admin" && usuario.Rango != "Vendedor"))
+            if (string.IsNullOrEmpty(usuario.Role) || (usuario.Role != "Admin" && usuario.Role != "Vendedor"))
             {
-                usuario.Rango = "Cliente";
+                usuario.Role = "Cliente";
             }
             await _usuarioRepository.AddAsync(usuario);
         }
@@ -75,7 +75,7 @@ namespace Application.Service
         public async Task<int> ContarUsuariosClientes()
         {
             var usuarios = await _usuarioRepository.GetAllAsync();
-            return usuarios.Count(u => u.Rango == "Cliente");
+            return usuarios.Count(u => u.Role == "Cliente");
         }
 
         public async Task ModificarUsuario(Usuario usuario)

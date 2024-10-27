@@ -32,7 +32,7 @@ namespace ApiEcommerce2.Controllers
                 usuarioDto.Email,
                 usuarioDto.Password,
                 usuarioDto.IsAdminLoggedIn,  // Asegúrate de pasar aquí un bool
-                usuarioDto.Rango);
+                usuarioDto.Role);
             return Ok(usuario);
         }
 

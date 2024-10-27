@@ -57,9 +57,9 @@ namespace ApiEcommerce2.Controllers
             }
 
             // Si el rol no es Admin, se asigna Cliente automáticamente
-            if (usuario.Rango != "Admin" && usuario.Rango != "Vendedor")
+            if (usuario.Role != "Admin" && usuario.Role != "Vendedor")
             {
-                usuario.Rango = "Cliente";
+                usuario.Role = "Cliente";
             }
 
             await _usuarioService.AgregarUsuario(usuario);
@@ -80,11 +80,11 @@ namespace ApiEcommerce2.Controllers
             if (existingUsuario == null) return NotFound();
 
             // Si el rango no está presente, se asigna 'Cliente' por defecto
-            if (string.IsNullOrEmpty(usuario.Rango))
+            if (string.IsNullOrEmpty(usuario.Role))
             {
-                usuario.Rango = "Cliente";
+                usuario.Role = "Cliente";
             }
-            else if (usuario.Rango != "Admin" && usuario.Rango != "Vendedor" && usuario.Rango != "Cliente")
+            else if (usuario.Role != "Admin" && usuario.Role != "Vendedor" && usuario.Role != "Cliente")
             {
                 // Validar que el rango sea uno de los permitidos
                 return BadRequest("El rango debe ser 'Admin', 'Vendedor' o 'Cliente'.");

@@ -15,7 +15,7 @@ namespace Domain.Entities
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Rango { get; set; } // Admin, Vendedor, Cliente
+        public string Role { get; set; } // Admin, Vendedor, Cliente
 
 
         // Inicializa con cadena vacía
@@ -26,7 +26,7 @@ namespace Domain.Entities
             Apellido = string.Empty;
             Email = string.Empty;
             Password = string.Empty;
-            Rango = "Cliente"; // Valor predeterminado
+            Role = "Cliente"; // Valor predeterminado
         }
     }
 }

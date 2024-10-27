@@ -60,8 +60,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
     };
 });
@@ -73,7 +73,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("Cliente", policy => policy.RequireRole("Cliente"));
 });
 
-// Configuración de la base de datos
+// Configuración deC la base de datos
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(
     builder.Configuration.GetConnectionString("DBConnectionString"),
     b => b.MigrationsAssembly("ApiEcommerce2")));
