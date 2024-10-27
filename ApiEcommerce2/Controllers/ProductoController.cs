@@ -17,7 +17,9 @@ namespace ApiEcommerce.Controllers
         }
 
         // Obtener todos los productos
+
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetProductos()
         {
             var productos = await _productoService.ObtenerProductos();
@@ -26,6 +28,7 @@ namespace ApiEcommerce.Controllers
 
         // Obtener un producto por ID
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin, Vendedor, Cliente")]
         public async Task<IActionResult> GetProducto(int id) // Cambiado a int
         {
             var producto = await _productoService.ObtenerProductoPorId(id);
@@ -35,7 +38,7 @@ namespace ApiEcommerce.Controllers
 
         // Crear un nuevo producto
         [HttpPost]
-        [Authorize(Roles = "Admin,Vendedor")]
+        [Authorize(Roles = "Admin, Vendedor")]
         public async Task<IActionResult> CrearProducto([FromBody] Producto producto)
         {
             // Validaciones
@@ -63,7 +66,7 @@ namespace ApiEcommerce.Controllers
 
         // Modificar un producto existente por ID
         [HttpPut("{id}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Vendedor")]
         public async Task<IActionResult> ModificarProducto(int id, [FromBody] Producto producto)
         {
             if (producto.Id != id)
@@ -84,6 +87,7 @@ namespace ApiEcommerce.Controllers
 
         // Eliminar un producto por ID
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin, Vendedor")]
         public async Task<IActionResult> EliminarProducto(int id) // Cambiado a int
         {
             var existingProducto = await _productoService.ObtenerProductoPorId(id);

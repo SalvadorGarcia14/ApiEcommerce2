@@ -7,6 +7,7 @@ using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Infrastructure.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
@@ -27,6 +28,11 @@ namespace Infrastructure.Repositories
         {
             var usuario = await _context.Usuarios.FindAsync(id);
             return usuario; // Puede ser null
+        }
+
+        public async Task<Usuario?> GetByEmailAsync(string email) // Implementar el método
+        {
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email); // Busca el usuario por email
         }
 
         public async Task AddAsync(Usuario usuario)
@@ -62,5 +68,7 @@ namespace Infrastructure.Repositories
         {
             return await _context.Usuarios.CountAsync(u => u.Rango == "Cliente");
         }
+
+
     }
 }

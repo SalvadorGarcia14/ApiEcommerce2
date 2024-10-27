@@ -1,12 +1,15 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 
 namespace ApiEcommerce2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    //[Authorize(Policy = "Admin")]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
@@ -18,14 +21,24 @@ namespace ApiEcommerce2.Controllers
 
         // Obtener todos los usuarios
         [HttpGet]
+        [Authorize(Policy = "Admin")]
         public async Task<IActionResult> GetUsuarios()
         {
+            var user = User.Identity as ClaimsIdentity;
+            var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value; // Obtener el rol del usuario
+
+            if (roleClaim == null)
+            {
+                return Unauthorized(); // Devuelve un 401 si no hay rol
+            }
+
             var usuarios = await _usuarioService.ObtenerUsuarios();
             return Ok(usuarios);
         }
 
         // Obtener un usuario por ID
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin,Vendedor")]
         public async Task<IActionResult> GetUsuario(int id)
         {
             var usuario = await _usuarioService.ObtenerUsuarioPorId(id);
@@ -35,6 +48,7 @@ namespace ApiEcommerce2.Controllers
 
         // Crear un nuevo usuario
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> CrearUsuario([FromBody] Usuario usuario)
         {
             if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrEmpty(usuario.Email))
@@ -54,6 +68,7 @@ namespace ApiEcommerce2.Controllers
 
         // Modificar un usuario existente
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ModificarUsuario(int id, [FromBody] Usuario usuario)
         {
             if (usuario.Id != id)
@@ -81,6 +96,8 @@ namespace ApiEcommerce2.Controllers
 
         // Eliminar un usuario por ID
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> EliminarUsuario(int id)
         {
             var usuario = await _usuarioService.ObtenerUsuarioPorId(id);

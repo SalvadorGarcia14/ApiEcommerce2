@@ -10,10 +10,9 @@ namespace Domain.Interfaces
     public interface IUsuarioRepository
     {
         Task<List<Usuario>> GetAllAsync();
-        Task<Usuario?> GetByIdAsync(int id); // Cambiado a Usuario?
+        Task<Usuario?> GetByIdAsync(int id);
         Task AddAsync(Usuario usuario);
         Task UpdateAsync(Usuario usuario);
         Task DeleteAsync(int id);
-        Task<int> CountClientesAsync();
     }
 }
