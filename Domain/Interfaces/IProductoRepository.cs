@@ -10,6 +10,8 @@ namespace Domain.Interfaces
     public interface IProductoRepository
     {
         Task<List<Producto>> GetAllAsync();
+        Task<Producto> GetByNombreAsync(string nombre);
+
         Task<Producto> GetByIdAsync(int id); // Cambiado a int
         Task AddAsync(Producto producto);
         Task UpdateAsync(Producto producto);

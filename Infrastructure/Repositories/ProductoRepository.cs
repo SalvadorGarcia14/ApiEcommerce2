@@ -24,6 +24,18 @@ namespace Infrastructure.Repositories
             return await _context.Productos.ToListAsync();
         }
 
+        public async Task<Producto> GetByNombreAsync(string nombre)
+        {
+            var producto = await _context.Productos.AsNoTracking().FirstOrDefaultAsync(p => p.Nombre == nombre);
+
+            if (producto == null)
+            {
+                throw new InvalidOperationException("Producto no encontrado.");
+            }
+
+            return producto;
+        }
+
         public async Task<Producto> GetByIdAsync(int id)
         {
             var producto = await _context.Productos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);

@@ -27,11 +27,11 @@ namespace ApiEcommerce.Controllers
         }
 
         // Obtener un producto por ID
-        [HttpGet("{id}")]
-        [Authorize(Roles = "Admin, Vendedor, Cliente")]
-        public async Task<IActionResult> GetProducto(int id) // Cambiado a int
+        [HttpGet("nombre/{nombre}")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetProductoPorNombre(string nombre)
         {
-            var producto = await _productoService.ObtenerProductoPorId(id);
+            var producto = await _productoService.ObtenerProductoPorNombre(nombre);
             if (producto == null) return NotFound();
             return Ok(producto);
         }

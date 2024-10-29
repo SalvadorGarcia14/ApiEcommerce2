@@ -24,15 +24,20 @@ namespace Infrastructure.Repositories
             return await _context.Usuarios.ToListAsync();
         }
 
+        public async Task<Usuario?> GetByNombreAsync(string nombre)
+        {
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Nombre == nombre);
+        }
+
         public async Task<Usuario?> GetByIdAsync(int id) // Coincide con la interfaz
         {
             var usuario = await _context.Usuarios.FindAsync(id);
             return usuario; // Puede ser null
         }
 
-        public async Task<Usuario?> GetByEmailAsync(string email) // Implementar el método
+        public async Task<Usuario?> GetByEmailAsync(string email)
         {
-            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email); // Busca el usuario por email
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task AddAsync(Usuario usuario)

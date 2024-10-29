@@ -21,12 +21,12 @@ namespace ApiEcommerce2.Controllers
 
         // Obtener todos los usuarios
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Vendedor")]
         public async Task<IActionResult> GetUsuarios()
         {
             var user = User.Identity as ClaimsIdentity;
             var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value;
-            if (roleClaim == null || roleClaim != "Admin")
+            if (roleClaim == null || roleClaim != "Admin" || roleClaim != "Vendedor")
             {
                 return Unauthorized(); // Devuelve un 401 si no hay rol o si el rol no es "Admin"
             }
@@ -36,72 +36,57 @@ namespace ApiEcommerce2.Controllers
         }
 
         // Obtener un usuario por ID
-        [HttpGet("{id}")]
+        [HttpGet("{nombre}")]
         [Authorize(Roles = "Admin,Vendedor")]
-        public async Task<IActionResult> GetUsuario(int id)
+        public async Task<IActionResult> GetUsuarioPorNombre(string nombre)
         {
-            var usuario = await _usuarioService.ObtenerUsuarioPorId(id);
+            var usuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
             if (usuario == null) return NotFound();
             return Ok(usuario);
         }
 
         // Crear un nuevo usuario
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> CrearUsuario([FromBody] Usuario usuario)
-        {
-            if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrEmpty(usuario.Email))
-            {
-                return BadRequest("El nombre y el email del usuario no pueden ser nulos.");
-            }
+        //[HttpPost]
+        //[AllowAnonymous]
+        //public async Task<IActionResult> CrearUsuario([FromBody] Usuario usuario)
+        //{
+        //    if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrEmpty(usuario.Email))
+        //    {
+        //        return BadRequest("El nombre y el email del usuario no pueden ser nulos.");
+        //    }
 
-            // Si el rol no es Admin, se asigna Cliente automáticamente
-            if (usuario.Role != "Admin" && usuario.Role != "Vendedor")
-            {
-                usuario.Role = "Cliente";
-            }
+        //    // Si el rol no es Admin, se asigna Cliente automáticamente
+        //    if (usuario.Role != "Admin" && usuario.Role != "Vendedor")
+        //    {
+        //        usuario.Role = "Cliente";
+        //    }
 
-            await _usuarioService.AgregarUsuario(usuario);
-            return Ok("Usuario liente creado correctamente.");
-        }
+        //    await _usuarioService.AgregarUsuario(usuario);
+        //    return Ok("Usuario liente creado correctamente.");
+        //}
 
         // Modificar un usuario existente
-        [HttpPut("{id}")]
+        [HttpPut("{nombre}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> ModificarUsuario(int id, [FromBody] Usuario usuario)
+        public async Task<IActionResult> ModificarUsuario(string nombre, [FromBody] Usuario usuario)
         {
-            if (usuario.Id != id)
-            {
-                return BadRequest("El ID del usuario en el cuerpo debe coincidir con el ID de la URL.");
-            }
-
-            var existingUsuario = await _usuarioService.ObtenerUsuarioPorId(id);
+            var existingUsuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
             if (existingUsuario == null) return NotFound();
 
-            // Si el rango no está presente, se asigna 'Cliente' por defecto
-            if (string.IsNullOrEmpty(usuario.Role))
-            {
-                usuario.Role = "Cliente";
-            }
-            else if (usuario.Role != "Admin" && usuario.Role != "Vendedor" && usuario.Role != "Cliente")
-            {
-                // Validar que el rango sea uno de los permitidos
-                return BadRequest("El rango debe ser 'Admin', 'Vendedor' o 'Cliente'.");
-            }
-
+            usuario.Nombre = nombre;  // Asegurarse de que el nombre coincide
             await _usuarioService.ModificarUsuario(usuario);
             return NoContent();
         }
 
         // Eliminar un usuario por ID
-        [HttpDelete("{id}")]
+        [HttpDelete("{nombre}")]
         [Authorize(Roles = "Admin")]
-
-        public async Task<IActionResult> EliminarUsuario(int id)
+        public async Task<IActionResult> EliminarUsuario(string nombre)
         {
-            var usuario = await _usuarioService.ObtenerUsuarioPorId(id);
+            var usuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
             if (usuario == null) return NotFound();
-            await _usuarioService.EliminarUsuario(id);
+
+            await _usuarioService.EliminarUsuarioPorNombre(nombre);
             return NoContent();
         }
     }

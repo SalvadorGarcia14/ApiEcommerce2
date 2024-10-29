@@ -22,6 +22,11 @@ namespace Application.Service
             return await _productoRepository.GetAllAsync();
         }
 
+        public async Task<Producto> ObtenerProductoPorNombre(string nombre)
+        {
+            return await _productoRepository.GetByNombreAsync(nombre);
+        }
+
         public async Task<Producto> ObtenerProductoPorId(int id) // Cambiado a int
         {
             return await _productoRepository.GetByIdAsync(id);

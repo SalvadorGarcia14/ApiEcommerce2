@@ -20,9 +20,11 @@ namespace Application.Dtos
             Apellido = string.Empty;
             Email = string.Empty;
             Password = string.Empty;
+            Role = string.Empty;
         }
 
         public bool IsAdminLoggedIn { get; set; }
 
     }
 }
+

@@ -10,14 +10,15 @@ namespace Domain.Interfaces
 {
     public interface IUsuarioService
     {
-        Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, bool isAdminLoggedIn, string rango = "Cliente");
+        Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, string role, bool isAdminLoggedIn);
+        Task<Usuario?> ObtenerPorEmailAsync(string email);
         Task<string?> LoginAsync(string email, string password);
         Task<List<Usuario>> ObtenerUsuarios();
-        Task<Usuario> ObtenerUsuarioPorId(int id);
+        Task<Usuario?> ObtenerUsuarioPorNombre(string nombre);
         Task AgregarUsuario(Usuario usuario);
         Task<int> ContarUsuariosClientes();
         Task ModificarUsuario(Usuario usuario);
-        Task EliminarUsuario(int id);
+        Task EliminarUsuarioPorNombre(string nombre);
         Task<Usuario?> ObtenerUsuarioPorEmail(string email);
     }
 }

@@ -35,32 +35,40 @@ namespace Application.Service
             return _jwtTokenService.GenerateToken(user);
         }
 
-        public async Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, bool isAdminLoggedIn, string role = "Cliente")
+
+
+        public async Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, string role, bool isAdminLoggedIn)
         {
             role = isAdminLoggedIn && !string.IsNullOrEmpty(role) ? role : "Cliente";
+
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(password); // Generar el hash
+
             var usuario = new Usuario
             {
                 Nombre = nombre,
                 Apellido = apellido,
                 Email = email,
-                Password = BCrypt.Net.BCrypt.HashPassword(password),
+                Password = hashedPassword, // Almacena el hash en vez de la contraseña
                 Role = role
             };
 
             await _usuarioRepository.AddAsync(usuario);
             return usuario;
         }
+
+        public async Task<Usuario?> ObtenerPorEmailAsync(string email)
+        {
+            return await _usuarioRepository.GetByEmailAsync(email);
+        }
         public async Task<List<Usuario>> ObtenerUsuarios()
         {
             return await _usuarioRepository.GetAllAsync();
         }
 
-        public async Task<Usuario> ObtenerUsuarioPorId(int id)
+        public async Task<Usuario?> ObtenerUsuarioPorNombre(string nombre)
         {
-            var usuario = await _usuarioRepository.GetByIdAsync(id);
-            if (usuario == null)
-                throw new KeyNotFoundException($"Usuario con ID {id} no encontrado.");
-            return usuario;
+            var usuarios = await _usuarioRepository.GetAllAsync();
+            return usuarios.FirstOrDefault(u => u.Nombre == nombre);
         }
 
         public async Task AgregarUsuario(Usuario usuario)
@@ -83,9 +91,13 @@ namespace Application.Service
             await _usuarioRepository.UpdateAsync(usuario);
         }
 
-        public async Task EliminarUsuario(int id)
+        public async Task EliminarUsuarioPorNombre(string nombre)
         {
-            await _usuarioRepository.DeleteAsync(id);
+            var usuario = await ObtenerUsuarioPorNombre(nombre);
+            if (usuario != null)
+            {
+                await _usuarioRepository.DeleteAsync(usuario.Id);  // Usar ID para eliminación
+            }
         }
 
         public async Task<Usuario?> ObtenerUsuarioPorEmail(string email)
