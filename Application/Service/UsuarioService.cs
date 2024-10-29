@@ -22,33 +22,33 @@ namespace Application.Service
         }
 
         // Método para registrar un nuevo usuario
-        public async Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, bool isAdminLoggedIn, string rango = "Cliente")
+        public async Task<string?> LoginAsync(string email, string password)
         {
-            rango = isAdminLoggedIn && !string.IsNullOrEmpty(rango) ? rango : "Cliente";
+            var user = (await _usuarioRepository.GetAllAsync())
+                .SingleOrDefault(u => u.Email == email);
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
+            {
+                return null;
+            }
+
+            return _jwtTokenService.GenerateToken(user);
+        }
+
+        public async Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, bool isAdminLoggedIn, string role = "Cliente")
+        {
+            role = isAdminLoggedIn && !string.IsNullOrEmpty(role) ? role : "Cliente";
             var usuario = new Usuario
             {
                 Nombre = nombre,
                 Apellido = apellido,
                 Email = email,
-                Password = BCrypt.Net.BCrypt.HashPassword(password), // Asegúrate de que esta línea se ejecute correctamente
-                Role = rango
+                Password = BCrypt.Net.BCrypt.HashPassword(password),
+                Role = role
             };
 
             await _usuarioRepository.AddAsync(usuario);
             return usuario;
-        }
-
-        public async Task<string?> LoginAsync(string email, string password)
-        {
-            var usuario = (await _usuarioRepository.GetAllAsync())
-                .SingleOrDefault(u => u.Email == email);
-
-            if (usuario == null || !BCrypt.Net.BCrypt.Verify(password, usuario.Password))
-            {
-                return null; // O bien lanza una excepción, si deseas manejarla en el controlador
-            }
-
-            return _jwtTokenService.GenerateToken(usuario);
         }
         public async Task<List<Usuario>> ObtenerUsuarios()
         {

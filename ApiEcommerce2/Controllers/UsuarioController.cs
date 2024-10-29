@@ -21,15 +21,14 @@ namespace ApiEcommerce2.Controllers
 
         // Obtener todos los usuarios
         [HttpGet]
-        [Authorize(Policy = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUsuarios()
         {
             var user = User.Identity as ClaimsIdentity;
-            var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value; // Obtener el rol del usuario
-
-            if (roleClaim == null)
+            var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value;
+            if (roleClaim == null || roleClaim != "Admin")
             {
-                return Unauthorized(); // Devuelve un 401 si no hay rol
+                return Unauthorized(); // Devuelve un 401 si no hay rol o si el rol no es "Admin"
             }
 
             var usuarios = await _usuarioService.ObtenerUsuarios();
