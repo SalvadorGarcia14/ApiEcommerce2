@@ -87,21 +87,9 @@ namespace ApiEcommerce2.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    ///public class AuthenticationController : Controller
-    ///{
-    ///[HttpPost]
+///public class AuthenticationController : Controller
+///{
+///[HttpPost]
 
 
 

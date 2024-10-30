@@ -72,6 +72,10 @@ builder.Services.AddScoped<IProductoService, ProductoService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>(); // Servicio de token JWT
+builder.Services.AddScoped<IOrdenService, OrdenService>();
+builder.Services.AddScoped<IOrdenRepository, OrdenRepository>();
+
+
 
 var app = builder.Build();
 

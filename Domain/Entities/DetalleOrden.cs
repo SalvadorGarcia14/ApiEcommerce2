@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Domain.Entities.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +12,23 @@ namespace Domain.Entities
     public class DetalleOrden
     {
         [Key]
-        public int Id { get; set; } // Autoincremental
-
-        public int OrdenId { get; set; } // Clave foránea
-        public Orden Orden { get; set; } = null!; // Relación con Orden
-        public string NombreProducto { get; set; } = string.Empty; // Inicializa aquí
+        public int Id { get; set; }
+        public string ProductoNombre { get; set; }
+        public string Categoria { get; set; }
+        public decimal PrecioUnitario { get; set; }
         public int Cantidad { get; set; }
-        public double PrecioUnitario { get; set; }
-        public double SubTotal => Cantidad * PrecioUnitario;
 
-        public DetalleOrden() { }
+        // Relación con Orden
+        [ForeignKey("OrdenId")]
+        public int OrdenId { get; set; }
+        public Orden? Orden { get; set; }  // Cambiado para permitir nulos
+
+        public DetalleOrden(string productoNombre, string categoria, decimal precioUnitario, int cantidad)
+        {
+            ProductoNombre = productoNombre;
+            Categoria = categoria;
+            PrecioUnitario = precioUnitario;
+            Cantidad = cantidad;
+        }
     }
-
 }

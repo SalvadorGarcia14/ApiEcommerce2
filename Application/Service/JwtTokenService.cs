@@ -37,11 +37,12 @@ namespace Application.Service
             };
 
             var token = new JwtSecurityToken(
-                issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
+                issuer: "ApiEcommerce2",
+                audience: "StandardUsers",
                 claims: claims,
-                expires: DateTime.Now.AddHours(1),
-                signingCredentials: credentials);
+                expires: DateTime.UtcNow.AddHours(1), // Expiración en una hora
+                signingCredentials: credentials
+            );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
