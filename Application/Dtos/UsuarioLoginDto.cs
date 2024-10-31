@@ -13,14 +13,12 @@ namespace ApiEcommerce2.DTOs
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
-        public string Role { get; set; }
 
 
         public UsuarioLoginDTO()
         {
             Email = string.Empty;
             Password = string.Empty;
-            Role = string.Empty;
         }
     }
 

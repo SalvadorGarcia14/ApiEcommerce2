@@ -3,6 +3,7 @@ using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using Application.Service;
 
 
 namespace ApiEcommerce2.Controllers
@@ -13,11 +14,13 @@ namespace ApiEcommerce2.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
+        private readonly IJwtTokenService _jwtTokenService;
 
-
-        public UsuarioController(IUsuarioService usuarioService)
+        public UsuarioController(IUsuarioService usuarioService, IJwtTokenService jwtTokenService)
         {
             _usuarioService = usuarioService;
+            _jwtTokenService = jwtTokenService;
+
         }
 
         // Obtener todos los usuarios
@@ -51,19 +54,34 @@ namespace ApiEcommerce2.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> CrearUsuario([FromBody] Usuario usuario)
         {
-            if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrEmpty(usuario.Email))
+            if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrEmpty(usuario.Email) || string.IsNullOrEmpty(usuario.Password))
             {
-                return BadRequest("El nombre y el email del usuario no pueden ser nulos.");
+                return BadRequest("El nombre, el email y la contraseña del usuario no pueden ser nulos.");
             }
 
-            // Si el rol no es Admin, se asigna Cliente automáticamente
+            // Verificar si el usuario ya existe por su email
+            var usuarioExistente = await _usuarioService.ObtenerUsuarioPorEmail(usuario.Email);
+            if (usuarioExistente != null)
+            {
+                return Conflict(new { mensaje = "Ya existe un usuario con este email." });
+            }
+
+            // Asigna el rol "Cliente" automáticamente si no es "Admin" o "Vendedor"
             if (usuario.Role != "Admin" && usuario.Role != "Vendedor")
             {
                 usuario.Role = "Cliente";
             }
 
+            // Realizar hash de la contraseña
+            usuario.Password = BCrypt.Net.BCrypt.HashPassword(usuario.Password);
+
+            // Agregar usuario a la base de datos
             await _usuarioService.AgregarUsuario(usuario);
-            return Ok("Usuario cliente creado correctamente.");
+
+            // Generar token JWT para el nuevo usuario
+            var token = _jwtTokenService.GenerateToken(usuario);
+
+            return Ok(new { mensaje = "Usuario cliente creado correctamente.", token });
         }
 
         // Modificar un usuario existente por email
@@ -72,7 +90,20 @@ namespace ApiEcommerce2.Controllers
         public async Task<IActionResult> ModificarUsuario(string email, [FromBody] Usuario usuario)
         {
             var existingUsuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
-            if (existingUsuario == null) return NotFound();
+            if (existingUsuario == null)
+            {
+                return NotFound();
+            }
+
+            // Verificar si el nuevo email ya está en uso por otro usuario
+            if (usuario.Email != null && usuario.Email != existingUsuario.Email)
+            {
+                var usuarioConNuevoEmail = await _usuarioService.ObtenerPorEmailAsync(usuario.Email);
+                if (usuarioConNuevoEmail != null)
+                {
+                    return Conflict(new { mensaje = "El email ya está en uso por otro usuario." });
+                }
+            }
 
             // Actualizar propiedades del usuario existente
             existingUsuario.Nombre = usuario.Nombre ?? existingUsuario.Nombre;

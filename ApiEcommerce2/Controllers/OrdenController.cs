@@ -158,7 +158,7 @@ namespace Presentation.Controllers
             }
 
             await _ordenRepository.DeleteAsync(id);
-            return NoContent(); 
+            return NoContent(); // Devuelve 204 No Content
         }
 
     }
