@@ -1,0 +1,497 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\infrastructure\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\infrastructure\\repositories\\ordenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\ordenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\infrastructure\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE9A7AB-266F-4625-A1A8-7AB376D0C6C5}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iproductoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iproductoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iproductorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iproductorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iordenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iordenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\iordenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\iordenrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\interfaces\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\entities\\orden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\orden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\domain\\entities\\detalleorden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3D3018D-1D1D-477C-B418-494209DAAF1A}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\detalleorden.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\service\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\service\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\service\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\service\\ordenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\service\\ordenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\service\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\service\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\dtos\\usuariologindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\dtos\\usuariologindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\dtos\\ordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\dtos\\ordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\dtos\\detalleordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\dtos\\detalleordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\application\\dtos\\crearordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{600C5D3E-1CB8-4658-A4BA-BD09817B78F7}|Application\\Application.csproj|solutionrelative:application\\dtos\\crearordendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\controllers\\ordencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\controllers\\ordencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\migrations\\20241030000617_agregarordencontroller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\migrations\\20241030000617_agregarordencontroller.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\migrations\\20241030000617_agregarordencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\migrations\\20241030000617_agregarordencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|c:\\users\\usuario\\source\\repos\\apiecommerce2\\apiecommerce2\\migrations\\20241031011655_agregarcolumndproductoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{646B952E-4096-4848-9328-17E710541453}|ApiEcommerce2\\ApiEcommerce2.csproj|solutionrelative:apiecommerce2\\migrations\\20241031011655_agregarcolumndproductoid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IProductoRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IProductoRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IProductoRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IProductoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T21:09:54.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IProductoService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IProductoService.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IProductoService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IProductoService.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IProductoService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAMwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T21:10:02.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:21:48.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IUsuarioService.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IUsuarioService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IUsuarioService.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IUsuarioService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:20:32.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\ApplicationContext.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\ApplicationContext.cs",
+              "RelativeToolTip": "Infrastructure\\ApplicationContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:48:36.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrdenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\OrdenRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\OrdenRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\OrdenRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\OrdenRepository.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAmwGIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T00:53:47.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAuwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T01:12:06.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IOrdenService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IOrdenService.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrdenService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IOrdenService.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IOrdenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T21:02:17.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Infrastructure\\Repositories\\ProductoRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ProductoRepository.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T21:10:21.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IOrdenRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IOrdenRepository.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IOrdenRepository.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IOrdenRepository.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IOrdenRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T00:59:49.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IJwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IJwtTokenService.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\IJwtTokenService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Interfaces\\IJwtTokenService.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\IJwtTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:20:03.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Orden.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Entities\\Orden.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Orden.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Entities\\Orden.cs",
+              "RelativeToolTip": "Domain\\Entities\\Orden.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA2wCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:34:28.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DetalleOrden.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Entities\\DetalleOrden.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\DetalleOrden.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Domain\\Entities\\DetalleOrden.cs",
+              "RelativeToolTip": "Domain\\Entities\\DetalleOrden.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:39:23.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Application\\Service\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\UsuarioService.cs",
+              "RelativeToolTip": "Application\\Service\\UsuarioService.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAzwHUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:58:17.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProductoService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\ProductoService.cs",
+              "RelativeDocumentMoniker": "Application\\Service\\ProductoService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\ProductoService.cs",
+              "RelativeToolTip": "Application\\Service\\ProductoService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwDYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:16:15.668Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "OrdenService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\OrdenService.cs",
+              "RelativeDocumentMoniker": "Application\\Service\\OrdenService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\OrdenService.cs",
+              "RelativeToolTip": "Application\\Service\\OrdenService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:40:42.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "Application\\Service\\JwtTokenService.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Service\\JwtTokenService.cs",
+              "RelativeToolTip": "Application\\Service\\JwtTokenService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:55:06.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UsuarioLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\UsuarioLoginDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\UsuarioLoginDto.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\UsuarioLoginDto.cs",
+              "RelativeToolTip": "Application\\Dtos\\UsuarioLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T19:50:06.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrdenDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\OrdenDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\OrdenDTO.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\OrdenDTO.cs",
+              "RelativeToolTip": "Application\\Dtos\\OrdenDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T19:58:23.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DetalleOrdenDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\DetalleOrdenDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\DetalleOrdenDTO.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\DetalleOrdenDTO.cs",
+              "RelativeToolTip": "Application\\Dtos\\DetalleOrdenDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T20:42:53.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CrearOrdenDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\CrearOrdenDTO.cs",
+              "RelativeDocumentMoniker": "Application\\Dtos\\CrearOrdenDTO.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\Application\\Dtos\\CrearOrdenDTO.cs",
+              "RelativeToolTip": "Application\\Dtos\\CrearOrdenDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T20:42:53.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAcwIAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:57:47.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrdenController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\OrdenController.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Controllers\\OrdenController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\OrdenController.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Controllers\\OrdenController.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAcwKQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T19:50:37.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T22:21:31.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Program.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Program.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Program.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T18:56:42.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20241030000617_AgregarOrdenController.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T20:41:50.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20241030000617_AgregarOrdenController.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.Designer.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.Designer.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.Designer.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Migrations\\20241030000617_AgregarOrdenController.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T20:41:51.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20241031011655_agregarcolumndProductoId.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241031011655_agregarcolumndProductoId.cs",
+              "RelativeDocumentMoniker": "ApiEcommerce2\\Migrations\\20241031011655_agregarcolumndProductoId.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\ApiEcommerce2\\ApiEcommerce2\\Migrations\\20241031011655_agregarcolumndProductoId.cs",
+              "RelativeToolTip": "ApiEcommerce2\\Migrations\\20241031011655_agregarcolumndProductoId.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T01:16:55.811Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
