@@ -105,5 +105,14 @@ namespace Application.Service
             var usuarios = await _usuarioRepository.GetAllAsync();
             return usuarios.FirstOrDefault(u => u.Email == email);
         }
+
+        public async Task EliminarUsuarioPorEmail(string email)
+        {
+            var usuario = await ObtenerUsuarioPorEmail(email);
+            if (usuario != null)
+            {
+                await _usuarioRepository.DeleteAsync(usuario.Id);
+            }
+        }
     }
 }

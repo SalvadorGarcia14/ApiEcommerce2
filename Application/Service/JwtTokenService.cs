@@ -28,6 +28,8 @@ namespace Application.Service
             // Claims del usuario
             var claims = new List<Claim>
             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // Identificador del usuario
+                new Claim(ClaimTypes.Name, user.Email),                    // Nombre principal, usado en User.Identity.Name
                 new Claim("sub", user.Id.ToString()),
                 new Claim("given_name", user.Nombre),
                 new Claim("family_name", user.Apellido),

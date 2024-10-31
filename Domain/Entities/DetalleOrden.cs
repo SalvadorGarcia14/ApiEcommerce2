@@ -13,15 +13,16 @@ namespace Domain.Entities
     {
         [Key]
         public int Id { get; set; }
-        public string ProductoNombre { get; set; }
-        public string Categoria { get; set; }
+        public int ProductoId { get; set; }
+        public string ProductoNombre { get; set; } = null!;
+        public string Categoria { get; set; } = null!;
         public decimal PrecioUnitario { get; set; }
         public int Cantidad { get; set; }
 
         // Relación con Orden
         [ForeignKey("OrdenId")]
         public int OrdenId { get; set; }
-        public Orden? Orden { get; set; }  // Cambiado para permitir nulos
+        public Orden? Orden { get; set; } // Cambiado para permitir nulos
 
         public DetalleOrden(string productoNombre, string categoria, decimal precioUnitario, int cantidad)
         {

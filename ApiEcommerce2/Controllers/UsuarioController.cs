@@ -36,12 +36,12 @@ namespace ApiEcommerce2.Controllers
             return Ok(usuarios);
         }
 
-        // Obtener un usuario por nombre
-        [HttpGet("{nombre}")]
+        // Obtener un usuario por email
+        [HttpGet("{email}")]
         [Authorize(Roles = "Admin,Vendedor")]
-        public async Task<IActionResult> GetUsuario(string nombre)
+        public async Task<IActionResult> GetUsuario(string email)
         {
-            var usuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
+            var usuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
             if (usuario == null) return NotFound();
             return Ok(usuario);
         }
@@ -66,30 +66,31 @@ namespace ApiEcommerce2.Controllers
             return Ok("Usuario cliente creado correctamente.");
         }
 
-        // Modificar un usuario existente por nombre
-        [HttpPut("{nombre}")]
+        // Modificar un usuario existente por email
+        [HttpPut("{email}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> ModificarUsuario(string nombre, [FromBody] Usuario usuario)
+        public async Task<IActionResult> ModificarUsuario(string email, [FromBody] Usuario usuario)
         {
-            var existingUsuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
+            var existingUsuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
             if (existingUsuario == null) return NotFound();
 
             // Actualizar propiedades del usuario existente
+            existingUsuario.Nombre = usuario.Nombre ?? existingUsuario.Nombre;
             existingUsuario.Email = usuario.Email ?? existingUsuario.Email;
-            existingUsuario.Role = string.IsNullOrEmpty(usuario.Role) ? "Cliente" : usuario.Role;
+            existingUsuario.Role = string.IsNullOrEmpty(usuario.Role) ? existingUsuario.Role : usuario.Role;
 
             await _usuarioService.ModificarUsuario(existingUsuario);
             return NoContent();
         }
 
-        // Eliminar un usuario por nombre
-        [HttpDelete("{nombre}")]
+        // Eliminar un usuario por email
+        [HttpDelete("{email}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> EliminarUsuario(string nombre)
+        public async Task<IActionResult> EliminarUsuario(string email)
         {
-            var usuario = await _usuarioService.ObtenerUsuarioPorNombre(nombre);
+            var usuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
             if (usuario == null) return NotFound();
-            await _usuarioService.EliminarUsuarioPorNombre(nombre);
+            await _usuarioService.EliminarUsuarioPorEmail(email); // Cambiar el método en el servicio para eliminar por email
             return NoContent();
         }
     }

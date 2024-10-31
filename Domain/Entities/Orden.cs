@@ -32,6 +32,13 @@ namespace Domain.Entities
             {
                 TotalPagar = DetallesOrden.Sum(d => d.PrecioUnitario * d.Cantidad);
             }
+
+            // Método para agregar un detalle a la orden
+            public void AgregarDetalle(DetalleOrden detalle)
+            {
+                DetallesOrden.Add(detalle);
+                CalcularTotal(); // Recalcular el total después de agregar el detalle
+            }
         }
     }
 }

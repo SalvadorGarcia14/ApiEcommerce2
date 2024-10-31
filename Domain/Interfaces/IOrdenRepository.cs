@@ -15,7 +15,12 @@ namespace Domain.Interfaces
         Task<List<Orden>> GetByUsuarioEmailAsync(string email); // Para clientes
         Task<Orden?> GetByIdAsync(int id);
         Task AddAsync(Orden orden);
-        Task UpdateAsync(Orden orden);
+        Task UpdateAsync(Orden orden); 
         Task DeleteAsync(int id);
+        Task<Orden> GetOrdenByIdAsync(int id);
+        Task SaveChangesAsync();
+
+
+
     }
 }

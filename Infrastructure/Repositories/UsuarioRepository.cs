@@ -74,6 +74,9 @@ namespace Infrastructure.Repositories
             return await _context.Usuarios.CountAsync(u => u.Role == "Cliente");
         }
 
-
+        public async Task<Producto?> GetProductoByIdAsync(int productoId)
+        {
+            return await _context.Productos.FindAsync(productoId);
+        }
     }
 }

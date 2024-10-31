@@ -20,6 +20,7 @@ namespace Infrastructure
         public DbSet<Orden> Ordenes { get; set; } = null!;
         public DbSet<DetalleOrden> DetallesOrden { get; set; } = null!;
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

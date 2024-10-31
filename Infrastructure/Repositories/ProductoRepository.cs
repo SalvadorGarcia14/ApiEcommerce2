@@ -107,6 +107,7 @@ namespace Infrastructure.Repositories
             _context.Productos.Remove(producto);
             await _context.SaveChangesAsync();
         }
+
     }
 }
 

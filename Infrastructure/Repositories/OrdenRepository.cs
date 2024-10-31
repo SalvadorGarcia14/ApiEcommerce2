@@ -54,8 +54,15 @@ namespace Infrastructure.Repositories
 
         public async Task UpdateAsync(Orden orden)
         {
-            // Actualiza una orden existente
-            _context.Ordenes.Update(orden);
+            var existingOrden = await _context.Ordenes.FindAsync(orden.Id);
+
+            if (existingOrden == null)
+            {
+                throw new InvalidOperationException("Orden no encontrada.");
+            }
+
+            // Actualiza los valores de la entidad existente
+            _context.Entry(existingOrden).CurrentValues.SetValues(orden);
             await _context.SaveChangesAsync();
         }
 
@@ -69,5 +76,24 @@ namespace Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+        public async Task<Orden> GetOrdenByIdAsync(int id)
+        {
+            var orden = await _context.Ordenes
+                .Include(o => o.DetallesOrden) // Asegúrate de incluir detalles si es necesario
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (orden == null)
+            {
+                throw new InvalidOperationException("Orden no encontrada."); // Lanza una excepción si no se encuentra
+            }
+
+            return orden;
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

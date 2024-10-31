@@ -20,5 +20,8 @@ namespace Domain.Interfaces
         Task ModificarUsuario(Usuario usuario);
         Task EliminarUsuarioPorNombre(string nombre);
         Task<Usuario?> ObtenerUsuarioPorEmail(string email);
+        Task EliminarUsuarioPorEmail(string email);
+
+
     }
 }
