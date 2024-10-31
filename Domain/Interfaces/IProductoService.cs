@@ -11,8 +11,6 @@ namespace Domain.Interfaces
     {
         Task<List<Producto>> ObtenerProductos();
         Task<Producto> ObtenerProductoPorNombre(string nombre);
-
-
         Task<Producto> ObtenerProductoPorId(int id); // Cambiado a int
         Task AgregarProducto(Producto producto);
         Task ModificarProducto(Producto producto);

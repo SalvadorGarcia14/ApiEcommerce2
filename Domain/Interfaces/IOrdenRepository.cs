@@ -19,8 +19,5 @@ namespace Domain.Interfaces
         Task DeleteAsync(int id);
         Task<Orden> GetOrdenByIdAsync(int id);
         Task SaveChangesAsync();
-
-
-
     }
 }
