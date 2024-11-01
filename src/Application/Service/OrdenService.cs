@@ -23,7 +23,6 @@ namespace Application.Service
 
         public async Task<List<Orden>> ObtenerOrdenesPorUsuario(string email, string role)
         {
-            // Los administradores y vendedores pueden ver todas las órdenes
             if (role == "Admin" || role == "Vendedor")
             {
                 return await _ordenRepository.GetAllAsync();

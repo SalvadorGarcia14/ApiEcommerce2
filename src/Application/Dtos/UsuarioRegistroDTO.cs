@@ -12,7 +12,7 @@ namespace Application.Dtos
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; } = "Cliente"; // Por defecto Cliente
+        public string Role { get; set; } = "Cliente";
 
         public UsuarioRegistroDTO()
         {

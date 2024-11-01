@@ -21,7 +21,6 @@ namespace Application.Service
             _jwtTokenService = jwtTokenService;
         }
 
-        // Método para registrar un nuevo usuario
         public async Task<string?> LoginAsync(string email, string password)
         {
             var user = (await _usuarioRepository.GetAllAsync())
@@ -34,8 +33,6 @@ namespace Application.Service
 
             return _jwtTokenService.GenerateToken(user);
         }
-
-
 
         public async Task<Usuario> RegisterAsync(string nombre, string apellido, string email, string password, string role, bool isAdminLoggedIn)
         {
@@ -96,7 +93,7 @@ namespace Application.Service
             var usuario = await ObtenerUsuarioPorNombre(nombre);
             if (usuario != null)
             {
-                await _usuarioRepository.DeleteAsync(usuario.Id);  // Usar ID para eliminación
+                await _usuarioRepository.DeleteAsync(usuario.Id); 
             }
         }
 

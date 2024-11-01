@@ -16,8 +16,6 @@ namespace ApiEcommerce.Controllers
             _productoService = productoService;
         }
 
-        // Obtener todos los productos
-
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetProductos()
@@ -26,7 +24,6 @@ namespace ApiEcommerce.Controllers
             return Ok(productos);
         }
 
-        // Obtener un producto por ID
         [HttpGet("nombre/{nombre}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetProductoPorNombre(string nombre)
@@ -36,7 +33,6 @@ namespace ApiEcommerce.Controllers
             return Ok(producto);
         }
 
-        // Crear un nuevo producto
         [HttpPost]
         [Authorize(Roles = "Admin, Vendedor")]
         public async Task<IActionResult> CrearProducto([FromBody] Producto producto)
@@ -64,7 +60,6 @@ namespace ApiEcommerce.Controllers
             return Ok("Producto ya existente. Actualizado correctamente.");
         }
 
-        // Modificar un producto existente por ID
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin, Vendedor")]
         public async Task<IActionResult> ModificarProducto(int id, [FromBody] Producto producto)
@@ -77,7 +72,7 @@ namespace ApiEcommerce.Controllers
             var existingProducto = await _productoService.ObtenerProductoPorId(id);
             if (existingProducto == null)
             {
-                return NotFound(); // Aquí se maneja el producto no encontrado sin lanzar error
+                return NotFound(); 
             }
 
             // Actualizar el producto
@@ -85,10 +80,9 @@ namespace ApiEcommerce.Controllers
             return NoContent();
         }
 
-        // Eliminar un producto por ID
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin, Vendedor")]
-        public async Task<IActionResult> EliminarProducto(int id) // Cambiado a int
+        public async Task<IActionResult> EliminarProducto(int id) 
         {
             var existingProducto = await _productoService.ObtenerProductoPorId(id);
             if (existingProducto == null) return NotFound();

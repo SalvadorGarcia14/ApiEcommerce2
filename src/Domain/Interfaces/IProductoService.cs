@@ -11,10 +11,10 @@ namespace Domain.Interfaces
     {
         Task<List<Producto>> ObtenerProductos();
         Task<Producto> ObtenerProductoPorNombre(string nombre);
-        Task<Producto> ObtenerProductoPorId(int id); // Cambiado a int
+        Task<Producto> ObtenerProductoPorId(int id); 
         Task AgregarProducto(Producto producto);
         Task ModificarProducto(Producto producto);
-        Task EliminarProducto(int id); // Cambiado a int
+        Task EliminarProducto(int id); 
         Task AddOrUpdateAsync(Producto producto);
 
     }

@@ -14,7 +14,7 @@ namespace Presentation.Controllers
     {
         private readonly IOrdenService _ordenService;
         private readonly IUsuarioService _usuarioService;
-        private readonly IOrdenRepository _ordenRepository; // Asegúrate de que esto esté presente
+        private readonly IOrdenRepository _ordenRepository;
 
 
         public OrdenController(IOrdenService ordenService, IUsuarioService usuarioService, IOrdenRepository ordenRepository)
@@ -99,6 +99,7 @@ namespace Presentation.Controllers
                 }).ToList() ?? new List<DetalleOrdenDto>()
             };
         }
+
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin,Vendedor")] // Restringe el acceso a admin y vendedor
         public async Task<IActionResult> UpdateOrden(int id, [FromBody] Orden orden)
@@ -119,7 +120,7 @@ namespace Presentation.Controllers
             ordenExistente.UsuarioNombre = orden.UsuarioNombre;
             ordenExistente.UsuarioEmail = orden.UsuarioEmail;
 
-            // Actualiza detalles de la orden y calcula el nuevo total
+          
             decimal nuevoTotalPagar = 0;
 
             foreach (var detalle in orden.DetallesOrden)
@@ -140,15 +141,15 @@ namespace Presentation.Controllers
             ordenExistente.TotalPagar = nuevoTotalPagar;
 
             // Guarda los cambios en la base de datos usando el método correcto
-            await _ordenRepository.UpdateAsync(ordenExistente); // Cambiado a UpdateAsync
+            await _ordenRepository.UpdateAsync(ordenExistente); 
             await _ordenRepository.SaveChangesAsync();
 
             return NoContent();
         }
 
-        // Método para eliminar una orden
+       
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin,Vendedor")] // Restringe el acceso a admin y vendedor
+        [Authorize(Roles = "Admin,Vendedor")] 
         public async Task<IActionResult> DeleteOrden(int id)
         {
             var existingOrden = await _ordenRepository.GetByIdAsync(id);
@@ -158,7 +159,7 @@ namespace Presentation.Controllers
             }
 
             await _ordenRepository.DeleteAsync(id);
-            return NoContent(); // Devuelve 204 No Content
+            return NoContent(); 
         }
 
     }

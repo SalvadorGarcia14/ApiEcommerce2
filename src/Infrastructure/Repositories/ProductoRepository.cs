@@ -54,10 +54,8 @@ namespace Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        // Nuevo método AddOrUpdateAsync
         public async Task AddOrUpdateAsync(Producto producto)
         {
-            // Buscar si ya existe un producto con el mismo nombre y categoría
             var productoExistente = await _context.Productos
                 .FirstOrDefaultAsync(p => p.Nombre == producto.Nombre && p.Categoria == producto.Categoria);
 
@@ -65,9 +63,9 @@ namespace Infrastructure.Repositories
             {
                 // Si el producto ya existe, sumamos la cantidad y actualizamos el precio
                 productoExistente.Cantidad += producto.Cantidad;
-                productoExistente.Precio = producto.Precio; // Actualizar con el último precio ingresado
-                productoExistente.Imagen = producto.Imagen; // También puedes actualizar la imagen
-                productoExistente.Descripcion = producto.Descripcion; // También puedes actualizar la descripción
+                productoExistente.Precio = producto.Precio;
+                productoExistente.Imagen = producto.Imagen;
+                productoExistente.Descripcion = producto.Descripcion; 
 
                 _context.Productos.Update(productoExistente);
             }
@@ -77,7 +75,6 @@ namespace Infrastructure.Repositories
                 await _context.Productos.AddAsync(producto);
             }
 
-            // Guardar los cambios
             await _context.SaveChangesAsync();
         }
 

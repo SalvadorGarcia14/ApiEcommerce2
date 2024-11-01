@@ -11,11 +11,10 @@ namespace Domain.Interfaces
     {
         Task<List<Producto>> GetAllAsync();
         Task<Producto> GetByNombreAsync(string nombre);
-
-        Task<Producto> GetByIdAsync(int id); // Cambiado a int
+        Task<Producto> GetByIdAsync(int id);
         Task AddAsync(Producto producto);
         Task UpdateAsync(Producto producto);
-        Task DeleteAsync(int id); // Cambiado a int
+        Task DeleteAsync(int id); 
         Task AddOrUpdateAsync(Producto producto);
 
     }

@@ -27,7 +27,7 @@ namespace Application.Service
             return await _productoRepository.GetByNombreAsync(nombre);
         }
 
-        public async Task<Producto> ObtenerProductoPorId(int id) // Cambiado a int
+        public async Task<Producto> ObtenerProductoPorId(int id)
         {
             return await _productoRepository.GetByIdAsync(id);
         }
@@ -38,7 +38,6 @@ namespace Application.Service
         }
         public async Task AddOrUpdateAsync(Producto producto)
         {
-            // Llamar al repositorio para añadir o actualizar el producto
             await _productoRepository.AddOrUpdateAsync(producto);
         }
 
@@ -47,7 +46,7 @@ namespace Application.Service
             await _productoRepository.UpdateAsync(producto);
         }
 
-        public async Task EliminarProducto(int id) // Cambiado a int
+        public async Task EliminarProducto(int id) 
         {
             await _productoRepository.DeleteAsync(id);
         }

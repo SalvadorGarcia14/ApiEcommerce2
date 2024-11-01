@@ -10,7 +10,7 @@ namespace Domain.Entities
     public class Usuario
     {
         [Key]
-        public int Id { get; set; } // Autoincremental
+        public int Id { get; set; } 
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Email { get; set; }
@@ -19,15 +19,13 @@ namespace Domain.Entities
         public bool IsAdminLoggedIn { get; set; }
 
 
-        // Inicializa con cadena vacía
         public Usuario()
         {
-            // El Id se asignará automáticamente por la base de datos
             Nombre = string.Empty;
             Apellido = string.Empty;
             Email = string.Empty;
             Password = string.Empty;
-            Role = "Cliente"; // Valor predeterminado
+            Role = "Cliente"; 
         }
     }
 }

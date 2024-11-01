@@ -29,10 +29,10 @@ namespace Infrastructure.Repositories
             return await _context.Usuarios.FirstOrDefaultAsync(u => u.Nombre == nombre);
         }
 
-        public async Task<Usuario?> GetByIdAsync(int id) // Coincide con la interfaz
+        public async Task<Usuario?> GetByIdAsync(int id) 
         {
             var usuario = await _context.Usuarios.FindAsync(id);
-            return usuario; // Puede ser null
+            return usuario; 
         }
 
         public async Task<Usuario?> GetByEmailAsync(string email)

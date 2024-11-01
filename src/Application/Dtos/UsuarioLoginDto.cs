@@ -14,7 +14,6 @@ namespace ApiEcommerce2.DTOs
         [Required]
         public string Password { get; set; }
 
-
         public UsuarioLoginDTO()
         {
             Email = string.Empty;

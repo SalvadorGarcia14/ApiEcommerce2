@@ -14,10 +14,10 @@ namespace Domain.Entities
         public class Orden
         {
             [Key]
-            public int Id { get; set; } // ID de la orden
-            public string UsuarioNombre { get; set; } // Nombre del usuario
-            public string UsuarioEmail { get; set; } // Email del usuario
-            public decimal TotalPagar { get; set; } // Total a pagar de la orden
+            public int Id { get; set; }
+            public string UsuarioNombre { get; set; }
+            public string UsuarioEmail { get; set; } 
+            public decimal TotalPagar { get; set; } 
 
             // Relación uno a muchos con DetalleOrden
             public ICollection<DetalleOrden> DetallesOrden { get; set; } = new List<DetalleOrden>();
@@ -37,7 +37,7 @@ namespace Domain.Entities
             public void AgregarDetalle(DetalleOrden detalle)
             {
                 DetallesOrden.Add(detalle);
-                CalcularTotal(); // Recalcular el total después de agregar el detalle
+                CalcularTotal(); 
             }
         }
     }

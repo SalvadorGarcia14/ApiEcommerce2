@@ -23,7 +23,6 @@ namespace ApiEcommerce2.Controllers
 
         }
 
-        // Obtener todos los usuarios
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUsuarios()
@@ -32,24 +31,22 @@ namespace ApiEcommerce2.Controllers
             var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value;
             if (roleClaim == null || roleClaim != "Admin")
             {
-                return Unauthorized(); // Devuelve un 401 si no hay rol o si el rol no es "Admin"
+                return Unauthorized(new { message = "Credenciales inválidas" }); 
             }
 
             var usuarios = await _usuarioService.ObtenerUsuarios();
             return Ok(usuarios);
         }
 
-        // Obtener un usuario por email
         [HttpGet("{email}")]
         [Authorize(Roles = "Admin,Vendedor")]
         public async Task<IActionResult> GetUsuario(string email)
         {
             var usuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
-            if (usuario == null) return NotFound();
+            if (usuario == null) return NotFound(new { message = "Credenciales inválidas" });
             return Ok(usuario);
         }
 
-        // Crear un nuevo usuario
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> CrearUsuario([FromBody] Usuario usuario)
@@ -66,16 +63,14 @@ namespace ApiEcommerce2.Controllers
                 return Conflict(new { mensaje = "Ya existe un usuario con este email." });
             }
 
-            // Asigna el rol "Cliente" automáticamente si no es "Admin" o "Vendedor"
             if (usuario.Role != "Admin" && usuario.Role != "Vendedor")
             {
                 usuario.Role = "Cliente";
             }
 
-            // Realizar hash de la contraseña
+            // Realiza hash de la contraseña
             usuario.Password = BCrypt.Net.BCrypt.HashPassword(usuario.Password);
 
-            // Agregar usuario a la base de datos
             await _usuarioService.AgregarUsuario(usuario);
 
             // Generar token JWT para el nuevo usuario
@@ -84,7 +79,6 @@ namespace ApiEcommerce2.Controllers
             return Ok(new { mensaje = "Usuario cliente creado correctamente.", token });
         }
 
-        // Modificar un usuario existente por email
         [HttpPut("{email}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ModificarUsuario(string email, [FromBody] Usuario usuario)
@@ -114,14 +108,21 @@ namespace ApiEcommerce2.Controllers
             return NoContent();
         }
 
-        // Eliminar un usuario por email
         [HttpDelete("{email}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> EliminarUsuario(string email)
         {
+            var user = User.Identity as ClaimsIdentity;
+            var roleClaim = user?.FindFirst(ClaimTypes.Role)?.Value;
+            if (roleClaim == null || roleClaim != "Admin")
+            {
+                return Unauthorized(new { message = "Credenciales inválidas" });
+            }
+
             var usuario = await _usuarioService.ObtenerUsuarioPorEmail(email);
             if (usuario == null) return NotFound();
-            await _usuarioService.EliminarUsuarioPorEmail(email); // Cambiar el método en el servicio para eliminar por email
+
+            await _usuarioService.EliminarUsuarioPorEmail(email);
             return NoContent();
         }
     }

@@ -22,7 +22,6 @@ namespace Infrastructure.Repositories
 
         public async Task<List<Orden>> GetAllAsync()
         {
-            // Obtener todas las órdenes junto con sus detalles
             return await _context.Ordenes
                 .Include(o => o.DetallesOrden) // Incluye los detalles de la orden
                 .ToListAsync();
@@ -33,15 +32,14 @@ namespace Infrastructure.Repositories
             // Filtra las órdenes por el email del usuario (para clientes)
             return await _context.Ordenes
                 .Where(o => o.UsuarioEmail == email)
-                .Include(o => o.DetallesOrden) // Incluye los detalles de la orden
+                .Include(o => o.DetallesOrden) 
                 .ToListAsync();
         }
 
         public async Task<Orden?> GetByIdAsync(int id)
         {
-            // Busca una orden específica por ID, incluyendo los detalles
             return await _context.Ordenes
-                .Include(o => o.DetallesOrden) // Incluye los detalles de la orden
+                .Include(o => o.DetallesOrden) 
                 .FirstOrDefaultAsync(o => o.Id == id);
         }
 
@@ -68,7 +66,6 @@ namespace Infrastructure.Repositories
 
         public async Task DeleteAsync(int id)
         {
-            // Elimina una orden por ID
             var orden = await GetByIdAsync(id);
             if (orden != null)
             {
@@ -79,12 +76,12 @@ namespace Infrastructure.Repositories
         public async Task<Orden> GetOrdenByIdAsync(int id)
         {
             var orden = await _context.Ordenes
-                .Include(o => o.DetallesOrden) // Asegúrate de incluir detalles si es necesario
+                .Include(o => o.DetallesOrden) 
                 .FirstOrDefaultAsync(o => o.Id == id);
 
             if (orden == null)
             {
-                throw new InvalidOperationException("Orden no encontrada."); // Lanza una excepción si no se encuentra
+                throw new InvalidOperationException("Orden no encontrada."); 
             }
 
             return orden;
